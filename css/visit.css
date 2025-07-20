@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root {
+    --deep-red: #8b0000;
+    --gold: #d4af37;
+    --earth: #5a3e2b;
+    --cream: #fefae0;
+    --dark: #1b1b1b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: var(--cream);
+    color: var(--earth);
+    line-height: 1.6;
+}
+
+/* Updated Header Styles to match second version */
+.gallery-header {
+    background: linear-gradient(135deg, var(--deep-red) 0%, var(--earth) 100%);
+    padding: 16px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.logo a {
+    color: var(--cream);
+    font-size: 28.8px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 16px;
+}
+
+.nav-links li a {
+    color: var(--cream);
+    text-decoration: none;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    background-color: var(--gold);
+    color: var(--dark);
+}
+
+/* Keep hamburger hidden as in original */
+.hamburger {
+    display: none;
+}
+
+/* Adjust hero section margin to account for fixed header */
+.hero-section {
+    margin-top: 80px;
+}
+
+/* Info Sections */
+.info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 32px auto;
+    width: 90%;
+    gap: 32px;
+}
+
+.opening,
+.contact {
+    background: white;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+}
+
+.info h2 {
+    font-size: 24px;
+    color: var(--deep-red);
+    margin-bottom: 8px;
+}
+
+.contact a {
+    color: var(--deep-red);
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Directions Section */
+.directions {
+    width: 90%;
+    margin: 32px auto;
+    background: white;
+    padding: 24px;
+    border-left: 8px solid var(--gold);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+.directions h2 {
+    color: var(--deep-red);
+    margin-bottom: 16px;
+}
+
+/* Map Section */
+.map {
+    width: 90%;
+    margin: 32px auto;
+    text-align: center;
+}
+
+.map h2 {
+    font-size: 25.6px;
+    margin-bottom: 16px;
+    color: var(--deep-red);
+}
+
+.map iframe {
+    width: 100%;
+    max-width: 100%;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+.gallery-footer {
+    background-color: var(--dark);
+    color: var(--white);
+    padding: 48px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.social-links {
+    display: flex;
+    gap: 24px;
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+}

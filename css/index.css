@@ -1,0 +1,266 @@
+/* Variables */
+:root {
+  --primary: #8B0000;
+  --secondary: #D4AF37;
+  --accent: #5D4037;
+  --light: #FFF8E1;
+  --dark: #212121;
+  --text: #333;
+  --white: #ffffff;
+  --gray: #f5f5f5;
+}
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--light);
+  color: var(--text);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.gallery-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  padding: 16px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: var(--white);
+  font-size: 28.8px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.logo a:hover {
+  color: var(--secondary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 0 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+.hamburger {
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(180deg, var(--secondary) 0%, var(--light) 100%);
+  text-align: center;
+  padding: 96px 32px 64px;
+  color: var(--dark);
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 16px;
+  color: var(--primary);
+}
+
+.hero p {
+  font-size: 19.2px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Section Heading */
+.artists h2 {
+  text-align: center;
+  margin: 48px 0 32px;
+  color: var(--primary);
+  font-size: 36.8px;
+  font-weight: 600;
+}
+
+/* Artist Grid */
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  padding: 32px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Artist Card */
+.artist-card {
+  background-color: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.artist-card a img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover img {
+  transform: scale(1.03);
+}
+
+.artist-card a {
+  display: block;
+  background-color: #ffe9d6;
+  color: var(--primary);
+  font-size: 17.6px;
+  font-weight: bold;
+  text-align: center;
+  padding: 12.8px 16px;
+  text-decoration: none;
+  border-bottom: 1px solid #f2c2a4;
+  transition: background-color 0.3s ease;
+}
+
+.artist-card a:hover {
+  background-color: #ffd9b0;
+}
+
+.artist-card p {
+  padding: 16px 19.2px 24px;
+  color: var(--text);
+  font-size: 15.2px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Other Sections */
+section {
+  padding: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+/* Footer Styles */
+.gallery-footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 48px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.social-links {
+  display: flex;
+  gap: 24px;
+}
+
+.social-links a {
+  color: var(--white);
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--secondary);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: var(--primary);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    margin: 16px 0;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,224 @@
+/* ===== CSS Variables ===== */
+:root {
+  --primary: #8B0000;
+  /* Dark red */
+  --secondary: #D4AF37;
+  /* Gold */
+  --accent: #5D4037;
+  /* Brown */
+  --white: #ffffff;
+  /* White */
+  --dark: #212121;
+  /* Dark gray */
+  --text: #333;
+  /* Text color */
+  --gray: #f5f5f5;
+  /* Light gray */
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: white;
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: 80px;
+  /* Prevent content overlap with fixed navbar */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Fixed Navbar ===== */
+.navbar-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  padding: 16px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: var(--white);
+  font-size: 28.8px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.logo a:hover {
+  color: var(--secondary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 0 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+.hamburger {
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/* ===== Gallery Intro ===== */
+.gallery-intro {
+  text-align: center;
+  padding: 40px 0;
+  background: white;
+}
+
+.gallery-intro h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.gallery-intro p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 17.6px;
+  line-height: 1.6;
+}
+
+/* ===== Gallery Grid ===== */
+.gallery {
+  column-count: 4;
+  column-gap: 15px;
+  padding: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  display: block;
+  break-inside: avoid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Footer Styles */
+.gallery-footer {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 48px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.social-links {
+  display: flex;
+  gap: 24px;
+}
+
+.social-links a {
+  color: var(--white);
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--secondary);
+}
+
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    column-count: 2;
+  }
+
+  /* Mobile Navbar */
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: var(--primary);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    margin: 16px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    column-count: 1;
+  }
+
+  .gallery-intro h1 {
+    font-size: 32px;
+  }
+}
